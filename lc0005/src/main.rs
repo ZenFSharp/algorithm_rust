@@ -5,12 +5,9 @@ impl Solution {
             return String::new();
         }
         let mut start = 0;
-        let mut end = 0;
+        let mut end = 0;        
 
-        let mut v = Vec::new();
-        for c in s.chars() {
-            v.push(c)
-        }
+        let v = s.chars().collect::<Vec<_>>();
 
         for i in 0..s.len() {
             let (l1, r1) = expand_around_center(&v, i as i32, i as i32);
