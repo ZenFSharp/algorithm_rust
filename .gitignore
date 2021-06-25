@@ -13,3 +13,10 @@ Cargo.lock
 **/.gitignore
 #算法题不会引入第三方依赖
 **/Cargo.toml
+
+#bin和obj
+**/obj/
+**/bin/
+
+#算法题可以忽略工程文件
+**/*.csproj
