@@ -51,5 +51,5 @@ fn main() {
         })),
     }));
     let result = Solution::swap_pairs(node);
-    println!("{:?}", result);
+    println!("{:#?}", result);
 }
