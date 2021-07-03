@@ -1,16 +1,14 @@
 struct Solution {}
 impl Solution {
-    pub fn max_ice_cream(costs: Vec<i32>, coins: i32) -> i32 {
-        let mut costs = costs;
-        costs.sort();
-        let mut count = 0;
-        let mut sum = 0;
-        while count < costs.len() && sum + costs[count] <= coins {
-            sum += costs[count];
-            count += 1;
-        }
-
-        count as i32
+    pub fn max_ice_cream(mut costs: Vec<i32>, mut coins: i32) -> i32 {
+        costs.sort_unstable();
+        costs
+            .iter()
+            .take_while(|&x| {
+                coins -= x;
+                coins >= 0
+            })
+            .count() as i32
     }
 }
 
